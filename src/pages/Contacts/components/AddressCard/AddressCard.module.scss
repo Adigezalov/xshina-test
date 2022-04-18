@@ -1,0 +1,53 @@
+@import "~@assets/styles/colors";
+@import "~@assets/styles/breakpoints";
+
+.root {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 15px 10px;
+  background-color: #3a3d3e;
+  cursor: pointer;
+  transition: 300ms;
+
+  &:hover {
+    background-color: get-color('grey', 100);
+  }
+
+  @include breakpoints('tablet') {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.select {
+  background-color: get-color('grey', 100);
+}
+
+.address {
+  font-size: 1.5em;
+  color: get-color('grey', 50);
+}
+
+.budgets {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 6px;
+  margin-top: 15px;
+
+  @include breakpoints('tablet') {
+    margin-top: 0;
+    margin-left: 15px;
+  }
+}
+
+.budget {
+  padding: 7px 10px;
+  background-color: get-color('grey', 400);
+
+  span {
+    font-size: 1em;
+    color: get-color('grey', 50);
+  }
+}

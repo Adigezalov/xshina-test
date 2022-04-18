@@ -1,0 +1,27 @@
+@import "~@assets/styles/colors";
+@import "~@assets/styles/breakpoints";
+
+.root {
+  width: 100%;
+  height: 100%;
+
+  @include breakpoints('tablet') {
+    height: auto;
+    max-height: 30%;
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+      width: 0;
+    }
+  }
+
+  @include breakpoints('mobile') {
+    height: auto;
+    max-height: 50%;
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+      width: 0;
+    }
+  }
+}

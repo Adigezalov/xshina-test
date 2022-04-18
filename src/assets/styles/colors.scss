@@ -1,0 +1,26 @@
+$palette: (
+        'grey': (
+                50: #808588,
+                100: #404749,
+                200: #3a3d3e,
+                300: #2a2c2d,
+                400: #282c2d
+        ),
+);
+
+@function get-color($name, $variant: 50, $opacity: 1) {
+  $color: null;
+  $color-spectrum: map-get($palette, $name);
+
+  @if $color-spectrum {
+    $color: map-get($color-spectrum, $variant);
+  }
+
+  $alpha: if(type-of($opacity) == 'number', $opacity, map-get($opacity, $opacity));
+
+  @if $alpha {
+    $color: rgba($color, $alpha);
+  }
+
+@return $color;
+}
